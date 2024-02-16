@@ -1,10 +1,17 @@
 package com.bootcamp.library.model;
 
 import jakarta.persistence.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 @Entity
 @Table(name = "orders")
 public class Order {

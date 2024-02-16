@@ -1,11 +1,17 @@
 package com.bootcamp.library.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-
+@Data
+@EqualsAndHashCode
+@AllArgsConstructor
 @Entity
 @Table(name = "customers", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
 public class Customer {

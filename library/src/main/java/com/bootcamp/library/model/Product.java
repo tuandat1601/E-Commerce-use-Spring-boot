@@ -1,10 +1,18 @@
 package com.bootcamp.library.model;
 
+import java.util.Date;
+import java.util.List;
+
 import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "products", uniqueConstraints = @UniqueConstraint(columnNames = {"name", "image"}))
 public class Product {
