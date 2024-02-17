@@ -21,7 +21,7 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
-    private String username;
+    private String userName;
     private String password;
     private String phoneNumber;
     private String address;

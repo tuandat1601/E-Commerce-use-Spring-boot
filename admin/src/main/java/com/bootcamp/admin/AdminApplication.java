@@ -3,9 +3,11 @@ package com.bootcamp.admin;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication(scanBasePackages ={"com.bootcamp.library.*","com.bootcamp.admin.*"} )
+@EnableJpaRepositories(value = "com.bootcamp.library.repository")
 @EntityScan(value = "com.bootcamp.library.model")
 public class AdminApplication {
 
