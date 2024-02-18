@@ -20,6 +20,7 @@ public String register() {
 @RequestMapping("/hello")
 public String hello(Model model) {
 	model.addAttribute("message", "Tuấn Đạt");
-	return "hello";
+	return "fragments";
+	
 }
 }
