@@ -57,18 +57,15 @@ public class AdminConfiguration {
 	         req.requestMatchers(WHITE_LIST_URL).permitAll()
 	         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().anyRequest().authenticated()).
 	       
-	       	formLogin(form -> form
-	       			.loginPage("/login")
-	       			.defaultSuccessUrl("/clubs")
-                    .loginProcessingUrl("/login")
-                    .failureUrl("/login?error=true")
+	       	formLogin(login ->login
+	       			.loginProcessingUrl("/do-login")
+                    .defaultSuccessUrl("/index", true)
+                    .permitAll())
+	       	.logout(logout ->logout.invalidateHttpSession(true)
+	       			.clearAuthentication(true)
+	       			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+	       			.logoutSuccessUrl("/login?logout")
 	       			.permitAll())
-	       	.logout(logout ->
-            logout.invalidateHttpSession(true)
-            .clearAuthentication(true)
-            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-            .logoutSuccessUrl("/login?logout")
-            .permitAll())
 	        .authenticationManager(authenticationManager)
             .sessionManagement(session ->
                     session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS)
