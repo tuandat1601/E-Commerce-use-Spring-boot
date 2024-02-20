@@ -40,7 +40,8 @@ public class AdminConfiguration {
 	    		"/register",
 	    		"/register-new",
 	    		"/vendor/**",
-	    		"/hello/**"
+	    		"/index",
+	    		"/hello"
 				
 		 };
 	 @Bean
@@ -51,6 +52,7 @@ public class AdminConfiguration {
  authenticationManagerBuilder
          .userDetailsService(userDetailsService())
          .passwordEncoder(passwordEncoder());
+
 		 AuthenticationManager authenticationManager = authenticationManagerBuilder.build();
 	       http.csrf(AbstractHttpConfigurer::disable).
 	       authorizeHttpRequests(req ->
@@ -58,6 +60,7 @@ public class AdminConfiguration {
 	         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().anyRequest().authenticated()).
 	       
 	       	formLogin(login ->login
+	       			.loginPage("/login")
 	       			.loginProcessingUrl("/do-login")
                     .defaultSuccessUrl("/index", true)
                     .permitAll())

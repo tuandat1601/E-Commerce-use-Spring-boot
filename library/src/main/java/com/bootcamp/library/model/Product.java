@@ -28,7 +28,7 @@ public class Product {
     
     @Lob
     @Column(columnDefinition = "bytea")
-    private String image;
+    private byte[] image;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     private Category category;

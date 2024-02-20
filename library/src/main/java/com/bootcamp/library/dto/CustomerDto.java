@@ -16,7 +16,7 @@ public class CustomerDto {
 
     @Size(min = 3, max = 10, message = "Last name contains 3-10 characters")
     private String lastName;
-    private String username;
+    private String userName;
     @Size(min = 3, max = 15, message = "Password contains 3-10 characters")
     private String password;
 

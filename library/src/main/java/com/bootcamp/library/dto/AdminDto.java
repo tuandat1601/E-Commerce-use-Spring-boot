@@ -13,7 +13,6 @@ public class AdminDto {
 	    private String firstName;
 	    @Size(min = 3, max = 10, message = "Last name contains 3-10 characters")
 	    private String lastName;
-	    @Size(min = 3, max = 10, message = "Admin name contains 3-10 characters")
 	    private String userName;
 	    @Size(min = 8, max = 20, message = "Password contains 8-20 characters")
 	    private String password;

@@ -28,11 +28,11 @@ public class CustomerConfiguration {
 	    }
 	    private static final String[] WHITE_LIST_URL = {
 	    		"/*",
+	    		"/register",
 	    		"/product-detail/**",
 	    		"/vendor/**",
 	    		"/shop/**",
-	    		"/find-products/**"
-				
+	    		"/find-products/**"	
 		 };
 	    @Bean
 	     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

@@ -1,5 +1,9 @@
 package com.bootcamp.library.service;
 
-public interface CountryService {
+import java.util.List;
 
+import com.bootcamp.library.model.Country;
+
+public interface CountryService {
+	 List<Country> findAll();
 }
